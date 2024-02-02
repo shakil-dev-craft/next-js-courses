@@ -4,7 +4,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Paglu App - website",
+  title: "Paglu App - Website",
   description: "Our Paglu App is a simple web application",
 };
 
