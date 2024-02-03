@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
                 <Link className={`${pathname === '/signup' ? 'active' : ''}`} href={"/signup"}>Signup</Link>
               </li>
             </ul> 
-            : null 
+            : <Link href="/">Go Home</Link> 
           }
         </div>
 
