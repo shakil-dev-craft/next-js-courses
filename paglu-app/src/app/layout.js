@@ -1,15 +1,16 @@
+"use client";
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Paglu App - Website",
-  description: "Our Paglu App is a simple web application",
-};
-
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+  // console.log(pathname);
+
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -17,19 +18,19 @@ export default function RootLayout({ children }) {
         <div className="bg-gray-400">
           <ul className="flex justify-center items-center gap-5 py-4">
             <li className="text-gray-900 hover:text-white transition-all">
-              <Link href={"/"}>Home</Link>
+              <Link className={`${pathname === '/' ? 'active' : ''}`} href={"/"}>Home</Link>
             </li>
             <li className="text-gray-900 hover:text-white transition-all">
-              <Link href={"/about"}>About</Link>
+              <Link className={`${pathname === '/about' ? 'active' : ''}`} href={"/about"}>About</Link>
             </li>
             <li className="text-gray-900 hover:text-white transition-all">
-              <Link href={"/userList"}>userList</Link>
+              <Link className={`${pathname === '/userList' ? 'active' : ''}`} href={"/userList"}>userList</Link>
             </li>
             <li className="text-gray-900 hover:text-white transition-all">
-              <Link href={"/contact"}>Contact</Link>
+              <Link className={`${pathname === '/contact' ? 'active' : ''}`} href={"/contact"}>Contact</Link>
             </li>
             <li className="text-gray-900 hover:text-white transition-all">
-              <Link href={"/signup"}>Signup</Link>
+              <Link className={`${pathname === '/signup' ? 'active' : ''}`} href={"/signup"}>Signup</Link>
             </li>
           </ul>
         </div>
